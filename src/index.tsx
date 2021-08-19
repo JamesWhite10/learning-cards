@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './app/App';
 import reportWebVitals from './reportWebVitals';
+import {Provider} from "react-redux";
+import {store} from "./app/store";
+import {HashRouter} from "react-router-dom";
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <HashRouter>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </HashRouter>,
   document.getElementById('root')
 );
 
