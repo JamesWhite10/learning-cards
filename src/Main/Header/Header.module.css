@@ -1,0 +1,36 @@
+.link {
+    text-decoration: none;
+    color: goldenrod;
+    margin: 25px;
+    font-size: 20px;
+    font-family: "Bookman Old Style"
+}
+
+.link:hover {
+    color: black;
+}
+
+.active {
+    color: black;
+}
+
+.block {
+    width: 45px;
+    height: 45px;
+
+    margin: 23px;
+}
+
+.header {
+    display: flex;
+
+    width: 600px;
+
+    transition-duration: 500ms;
+    transform: translate(-560px);
+}
+
+.header:hover {
+    transition-duration: 500ms;
+    transform: translate(0);
+}
