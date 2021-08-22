@@ -1,0 +1,27 @@
+.blueBtn {
+  height: 36px;
+  width: 125px;
+  border-radius: 30px;
+  padding: 2px;
+  box-sizing: border-box;
+  line-height: 19px;
+  background-color: crimson;
+  color: #ECECF9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: SF UI Display, sans-serif;
+  box-shadow: 0 4px 18px 2px rgba(33, 38, 143, 0.35);
+  transition: .2s;
+  cursor: pointer;
+}
+.blueBtn:hover {
+  opacity: .8;
+}
+.blueBtn:active {
+  background-color: #81839e;
+}
+.blueBtn[disabled] {
+  opacity: .8;
+  cursor: none;
+}
