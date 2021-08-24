@@ -13,6 +13,15 @@ export const registrationAPI = {
     }
 }
 
+export const loginAPI = {
+    login(email: string, password: string, rememberMe: boolean) {
+        return instance.post<loginResponseType>('auth/login', {email, password, rememberMe})
+    },
+    logout() {
+        return instance.delete<logoutResponseType>('auth/me')
+    }
+}
+
 //TYPES=====
 
 //registrationAPI
@@ -31,4 +40,23 @@ type addedUserType = {
     created: string,
     updated: string,
     __v: number
+}
+
+//loginAPI
+type loginResponseType = {
+    _id: string,
+    email: string,
+    name: string,
+    avatar?: string,
+    publicCardPacksCount: number,
+    created: Date,
+    updated: Date,
+    isAdmin: boolean,
+    verified: boolean,
+    rememberMe: boolean,
+    error?: string
+}
+type logoutResponseType = {
+    info: 'logOut success —ฅ/ᐠ.̫ .ᐟ\ฅ—',
+    error: string
 }

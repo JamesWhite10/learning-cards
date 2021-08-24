@@ -24,7 +24,7 @@ export const registrationReducer = (state: initialRegistrationType = initialStat
 export const setRegistrationAC = (isRegistration: boolean) => ({
     type: 'REGISTRATION/SET-REGISTRATION', payload: {isRegistration}
 } as const)
-const loadingRequest = (loadingRequest: boolean) => ({
+export const loadingRequest = (loadingRequest: boolean) => ({
     type: 'REGISTRATION/LOADING-REQUEST',
     payload: {loadingRequest}
 } as const)
