@@ -4,6 +4,7 @@ import {InputContainer} from "../common/InputContainer/InputContainer";
 import {NavLink} from "react-router-dom";
 import {MainActionButton} from "../common/MainActionButton/MainActionButton";
 import {useDispatch} from "react-redux";
+import { HeaderEnterApp } from "../common/HeaderEnterApp/HeaderEnterApp";
 
 export const PasswordRecovery = () => {
 
@@ -21,6 +22,7 @@ export const PasswordRecovery = () => {
 
     return (
         <div className={style.passwordRecoveryContainer}>
+            <HeaderEnterApp title={'Forgot your password?'}/>
             <div className={style.inputField}>
                 <InputContainer
                     placeholder={'Email'}
@@ -41,7 +43,7 @@ export const PasswordRecovery = () => {
                     loadingStatus={false}
                 />
                 <p>Did you remember your password?</p>
-                <NavLink to="/login" >Try again</NavLink>
+                <NavLink to="/login" className={style.footerBtn}>Try again</NavLink>
 
             </div>
 

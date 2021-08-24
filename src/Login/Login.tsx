@@ -3,23 +3,20 @@ import {InputContainer} from '../common/InputContainer/InputContainer';
 import {MainActionButton} from '../common/MainActionButton/MainActionButton';
 import s from './Login.module.css'
 import {useDispatch, useSelector} from 'react-redux';
-import {Redirect} from 'react-router-dom';
-import {
-    setServerErrorMessageRegistration
-} from '../Registration/registration-reducer';
+import {NavLink, Redirect} from 'react-router-dom';
 import SuperCheckbox from '../HomemadeInpButCheck/common/c3-SuperCheckbox/SuperCheckbox';
 import {emailValidation} from '../common/validation/EmailValidation';
 import {PasswordValidation} from '../common/validation/passwordValidation';
 import {setLogin} from './login-reducer';
 import {AppRootStateType} from "../state/store";
+import {setServerErrorMessageRegistration} from "../Registration/registration-reducer";
+import {HeaderEnterApp} from "../common/HeaderEnterApp/HeaderEnterApp";
+import style from "../ PasswordRecovery/PasswordRecovery.module.css";
 
 export const Login = () => {
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
     const [rememberMe, setRememberMe] = useState<boolean>(false)
-
-    const [errorEmailMessage, setErrorEmailMessage] = useState<string>('')
-    const [errorPasswordMessage, setErrorPasswordMessage] = useState<string>('')
 
     const disabledBtnSubmit = !email || !password
 
@@ -28,16 +25,18 @@ export const Login = () => {
     const loadingStatus = useSelector<AppRootStateType, boolean>(state => state.registration.loadingRequest)
     const serverErrorMessage = useSelector<AppRootStateType, string>(state => state.registration.error)
 
+    const [errorEmailMessage, setErrorEmailMessage] = useState<string>('')
+    const [errorPasswordMessage, setErrorPasswordMessage] = useState<string>('')
+
     const onChangeEmail = (e: ChangeEvent<HTMLInputElement>) => {
-        setErrorEmailMessage('')
         setEmail(e.currentTarget.value)
+        setErrorEmailMessage('')
         serverErrorMessage && dispatch(setServerErrorMessageRegistration(''))
     }
-
     const onChangePassword = (e: ChangeEvent<HTMLInputElement>) => {
-        setErrorPasswordMessage('')
         setPassword(e.currentTarget.value)
         serverErrorMessage && dispatch(setServerErrorMessageRegistration(''))
+        setErrorPasswordMessage('')
     }
 
     const onChangeRememberMe = () => {
@@ -54,17 +53,15 @@ export const Login = () => {
         }
     }
 
-    const goBack = () => {
-        window.history.go(-1);
-    }
-
     if (login) {
         return <Redirect to={'/profile'}/>
     }
 
     return (
-        <div className={s.registrationContainer}>
-            <div className={s.inputFields}>
+        <div className={s.authPageContainer}>
+            <HeaderEnterApp title={'Sign In'}/>
+
+            <div className={s.emailPasswordLoginContainer}>
                 <InputContainer
                     title={'Email'}
                     typeInput={'email'}
@@ -81,26 +78,25 @@ export const Login = () => {
                 />
                 <SuperCheckbox
                     checked={rememberMe}
-                    onChangeChecked={onChangeRememberMe}
-                >
+                    onChangeChecked={onChangeRememberMe}>
                     Remember Me
                 </SuperCheckbox>
+                <div className={s.forgotPasswordBtn}>
+                    <NavLink to="/password-recovery">Forgot Password</NavLink>
+                </div>
             </div>
 
-            <div className={s.positionButtonAndError}>
+            <div className={s.btnFooterLoginContainer}>
                 <span className={s.errorMessageContainer}>{serverErrorMessage}</span>
-
-                <div className={s.button}>
-                    <a className={s.btnCancel} onClick={goBack}>Cancel</a>
-                    <div className={s.blueBtnContainer}>
-                        <MainActionButton
-                            actionClick={onLogin}
-                            disabledBtnSubmit={disabledBtnSubmit}
-                            title={'Login'}
-                            loadingStatus={loadingStatus}
-                        />
-                    </div>
+                <div className={s.blueBtnContainer}>
+                    <MainActionButton actionClick={onLogin}
+                                      disabledBtnSubmit={disabledBtnSubmit}
+                                      title={'Login'}
+                                      loadingStatus={loadingStatus}
+                    />
                 </div>
+                <p className={s.DifferentAccountBtn}>Don't have an account</p>
+                <NavLink to="/registration" className={style.footerBtn}>Sing Up</NavLink>
             </div>
         </div>
     )

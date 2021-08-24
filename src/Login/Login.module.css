@@ -1,73 +1,63 @@
-.registrationContainer {
+.authPageContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 25px;
     box-sizing: border-box;
-    height: 540px;
+    min-height: 540px;
     max-width: 415px;
     width: 100%;
     border-radius: 10px;
     background-color: #F9F9FE;
-    margin: 0 auto;
-
+    margin: 10px auto 0;
 }
 
-.inputFields {
+.emailPasswordLoginContainer {
     display: flex;
     flex-direction: column;
-    margin-bottom: 84px;
+    margin-bottom: 60px;
 }
 
-.passwordControl {
-    position: absolute;
-    top: 20px;
-    right: 6px;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-}
-
-.button {
+.forgotPasswordBtn {
+    margin-top: 45px;
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.positionButtonAndError {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.errorMessageContainer {
-    font-size: 20px;
-    height: 30px;
-    color: red;
-    margin-bottom: 20px;
-}
-
-.blueBtnContainer {
-    max-width: 187px;
-    width: 100%;
-}
-
-.btnCancel {
-    height: 36px;
-    max-width: 125px;
-    width: 100%;
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #21268F;
+    justify-content: flex-end;
+    font-size: 15px;
+    line-height: 17px;
     font-family: SF UI Display, sans-serif;
-    opacity: 0.8;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
-    background-color: #D7D8EF;
     transition: .2s;
 }
 
-.btnCancel:hover {
-    background-color: #c0c1dc;
+.forgotPasswordBtn a {
+    text-decoration: none;
+}
+
+.btnFooterLoginContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-family: SF UI Display, sans-serif;
+}
+
+
+.errorMessageContainer {
+    height: 30px;
+    color: red;
+}
+
+.DifferentAccountBtn {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(45, 46, 70, 0.5);
+}
+
+.blueBtnContainer {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    max-width: 266px;
+    width: 100%;
 }

@@ -8,6 +8,7 @@ import {PasswordValidation} from "../common/validation/passwordValidation";
 import {AppRootStateType} from "../state/store";
 import { InputContainer } from "../common/InputContainer/InputContainer";
 import {MainActionButton} from "../common/MainActionButton/MainActionButton";
+import {HeaderEnterApp} from "../common/HeaderEnterApp/HeaderEnterApp";
 
 export const Registration = () => {
 
@@ -72,6 +73,7 @@ export const Registration = () => {
 
     return (
         <div className={s.registrationContainer}>
+            <HeaderEnterApp title={'Sign Up'}/>
             <div className={s.inputFields}>
                 <InputContainer
                     title={'Email'}
