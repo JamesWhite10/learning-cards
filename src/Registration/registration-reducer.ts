@@ -1,5 +1,5 @@
 import {Dispatch} from "redux";
-import {AppThunkType} from "../app/store";
+import {AppThunkType} from "../state/store";
 import {registrationAPI} from "../api/api";
 
 const initialStateRegistration = {

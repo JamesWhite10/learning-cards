@@ -13,7 +13,20 @@ export const registrationAPI = {
     }
 }
 
-//TYPES=====
+export const  PasswordRecoveryAPI={
+    forgot(email:string) {
+        return instance.post<RecoveryResponseType>('auth/recovery', {
+            email,
+            from: 'test-front-admin <ai73a@yandex.by>',
+            message: `<div style="background-color: lime; padding: 15px">
+                            password recovery link: 
+                            <!--нужен путь к токену Максаб но я не врубаюсь пока что к чему-->
+                        <a href='https://JamesWhite10.github.io/learning-cards#/new-password/$token$'>link</a></div>`
+        })
+    }
+}
+
+//=======TYPES=====
 
 //registrationAPI
 type registrationResponseType = {
@@ -31,4 +44,12 @@ type addedUserType = {
     created: string,
     updated: string,
     __v: number
+}
+
+//--------Recovery api types----------
+type RecoveryResponseType ={
+    email:string
+    //не уверен, но возможно хватит типизации только email
+    from:string
+    message:any
 }
