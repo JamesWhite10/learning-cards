@@ -1,9 +1,9 @@
-import {AppThunkType} from '../app/store';
 import {
     loadingRequest,
     setServerErrorMessageRegistration
 } from '../Registration/registration-reducer';
 import {loginAPI} from '../api/api';
+import {AppThunkType} from "../state/store";
 
 
 const initialState = {
