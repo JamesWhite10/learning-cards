@@ -2,7 +2,6 @@ import React, {ChangeEvent, useState} from 'react';
 import {InputContainer} from '../common/InputContainer/InputContainer';
 import {MainActionButton} from '../common/MainActionButton/MainActionButton';
 import s from './Login.module.css'
-import {AppRootStateType} from '../app/store';
 import {useDispatch, useSelector} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import {
@@ -12,6 +11,7 @@ import SuperCheckbox from '../HomemadeInpButCheck/common/c3-SuperCheckbox/SuperC
 import {emailValidation} from '../common/validation/EmailValidation';
 import {PasswordValidation} from '../common/validation/passwordValidation';
 import {setLogin} from './login-reducer';
+import {AppRootStateType} from "../state/store";
 
 export const Login = () => {
     const [email, setEmail] = useState<string>('')
