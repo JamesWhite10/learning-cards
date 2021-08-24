@@ -1,15 +1,23 @@
-import React, {useState} from "react";
+import React, {ChangeEvent, useState} from "react";
 import style from "./PasswordRecovery.module.css";
 import {InputContainer} from "../common/InputContainer/InputContainer";
 import {NavLink} from "react-router-dom";
+import {MainActionButton} from "../common/MainActionButton/MainActionButton";
+import {useDispatch} from "react-redux";
 
 export const PasswordRecovery = () => {
 
-
     const [email, setEmail] = useState<string>("")
     const [error, setError]= useState<string>("")
+    const disabledBtnSubmit = !email
 
-    const inputEmail = () => {}
+    const dispatch = useDispatch()
+
+    const inputEmail = (event:ChangeEvent<HTMLInputElement>) => {
+        setError('')
+        setEmail(event.currentTarget.value)
+
+    }
 
     return (
         <div className={style.passwordRecoveryContainer}>
@@ -26,7 +34,12 @@ export const PasswordRecovery = () => {
 
             <div className={style.positionButtonAndError}>
 
-                <button >Get Instructions</button>
+                <MainActionButton
+                    actionClick={()=>{}}
+                    disabledBtnSubmit={disabledBtnSubmit}
+                    title={"Get Instructions"}
+                    loadingStatus={false}
+                />
                 <p>Did you remember your password?</p>
                 <NavLink to="/login" >Try again</NavLink>
 

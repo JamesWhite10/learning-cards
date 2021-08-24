@@ -14,7 +14,7 @@ export const registrationAPI = {
 }
 
 export const  PasswordRecoveryAPI={
-    recovery(email:string) {
+    forgot(email:string) {
         return instance.post<RecoveryResponseType>('auth/recovery', {
             email,
             from: 'test-front-admin <ai73a@yandex.by>',
@@ -49,6 +49,7 @@ type addedUserType = {
 //--------Recovery api types----------
 type RecoveryResponseType ={
     email:string
+    //не уверен, но возможно хватит типизации только email
     from:string
     message:any
 }

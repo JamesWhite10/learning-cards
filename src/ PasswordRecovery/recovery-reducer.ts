@@ -1,5 +1,7 @@
 
-const initialState = {}
+const initialState = {
+    error: ""
+}
 
 export type InitialStateType = typeof initialState
 
