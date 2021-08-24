@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {setRegistration, setRegistrationAC, setServerErrorMessageRegistration} from "./registration-reducer";
 import {emailValidation} from "../common/validation/EmailValidation";
 import {PasswordValidation} from "../common/validation/passwordValidation";
-import {AppRootStateType} from "../app/store";
+import {AppRootStateType} from "../state/store";
 import { InputContainer } from "../common/InputContainer/InputContainer";
 import {MainActionButton} from "../common/MainActionButton/MainActionButton";
 
