@@ -1,8 +1,9 @@
 import React from "react";
 import {logout} from '../Login/login-reducer';
 import {useDispatch, useSelector} from 'react-redux';
-import {AppRootStateType} from '../app/store';
+
 import {Redirect} from 'react-router-dom';
+import {AppRootStateType} from "../state/store";
 
 export const Profile = () => {
     const dispatch = useDispatch()
