@@ -9,27 +9,26 @@ const instance = axios.create({
 
 export const registrationAPI = {
     register(email: string, password: string) {
-        return instance.post<registrationResponseType>('auth/register', {email, password})
+        return instance.post<RegistrationResponseType>('auth/register', {email, password})
     }
 }
 
 export const loginAPI = {
     login(email: string, password: string, rememberMe: boolean) {
-        return instance.post<loginResponseType>('auth/login', {email, password, rememberMe})
+        return instance.post<LoginResponseType>('auth/login', {email, password, rememberMe})
     },
     logout() {
-        return instance.delete<logoutResponseType>('auth/me')
+        return instance.delete<LogoutResponseType>('auth/me')
     }
 }
 
-export const PasswordRecoveryAPI = {
+export const passwordRecoveryAPI = {
     forgot(email: string) {
         return instance.post<RecoveryResponseType>('auth/recovery', {
             email,
             from: 'test-front-admin <ai73a@yandex.by>',
             message: `<div style="background-color: lime; padding: 15px">
                             password recovery link: 
-                            <!--нужен путь к токену Максаб но я не врубаюсь пока что к чему-->
                         <a href='https://JamesWhite10.github.io/learning-cards#/new-password/$token$'>link</a></div>`
         })
     }
@@ -38,16 +37,8 @@ export const PasswordRecoveryAPI = {
 
 //TYPES=====
 
-//recovery password
-type RecoveryResponseType = {
-    email: string
-    from: string
-    message: any
-}
-
-
 //registrationAPI
-type registrationResponseType = {
+type RegistrationResponseType = {
     addedUser: addedUserType
     error?: string
 }
@@ -65,7 +56,7 @@ type addedUserType = {
 }
 
 //loginAPI
-type loginResponseType = {
+type LoginResponseType = {
     _id: string,
     email: string,
     name: string,
@@ -78,7 +69,14 @@ type loginResponseType = {
     rememberMe: boolean,
     error?: string
 }
-type logoutResponseType = {
+type LogoutResponseType = {
     info: 'logOut success —ฅ/ᐠ.̫ .ᐟฅ—',
     error: string
+}
+
+//recovery password API
+type RecoveryResponseType = {
+    email: string
+    from: string
+    message: any
 }
