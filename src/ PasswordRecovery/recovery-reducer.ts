@@ -1,39 +1,58 @@
+import {AppThunkType} from "../state/store";
+import {PasswordRecoveryAPI} from "../api/api";
 
-const initialState = {
-    error: ""
+const initialRecoveryReducerState = {
+    error: "",
+    success: false,
 }
 
-export type InitialStateType = typeof initialState
 
-export const recoveryReducer = (state: InitialStateType = initialState, action: ActionTypes): InitialStateType => {
-    switch (1) {
-        default:
-            return {...state}
+export const recoveryReducer =
+    (state: InitialRecoveryReducerType = initialRecoveryReducerState, action: ActionRecoveryReducerTypes)
+        : InitialRecoveryReducerType => {
+        switch (action.type) {
+            case "PASSWORD-RECOVERY/SUCCESS" :
+                return {...state, ...action.payload}
+            default:
+                return state
+        }
     }
-}
 //======ActionC=======
 
-/*const setFAC = (f:any)=>({
-    type: "AAA",
-    payload: {f}
+export const setSuccessAC = (success: boolean) => ({
+    type: "PASSWORD-RECOVERY/SUCCESS",
+    payload: {success}
 } as const)
 
-const setFAC = (f:any)=>({
-    type: "AAA",
-    payload: {f}
-} as const)
-
-const setFAC = (f:any)=>({
-    type: "AAA",
-    payload: {f}
-} as const)*/
+// const setFAC = (f: any) => ({
+//     type: "AAA",
+//     payload: {f}
+// } as const)
 
 
 //=======ThunkC=======
+export const recoveryThunk = (email: string): AppThunkType =>
+    async (dispatch) => {
+        try {
+            await PasswordRecoveryAPI.forgot(email)
+            dispatch(setSuccessAC(true))
+        } catch (e) {
+            const error = e.response
+                ? e.response.data.error
+                : (e.message + `, more information in console`);
+
+            dispatch(setSuccessAC(false))
+        }
 
 
-
+    }
 
 
 //=======Types========
-type ActionTypes = any
+export type InitialRecoveryReducerType = typeof initialRecoveryReducerState
+export type ActionRecoveryReducerTypes = ReturnType<typeof setSuccessAC>
+
+// function async(dispatch: any) {
+//     throw new Error("Function not implemented.");
+// }
+

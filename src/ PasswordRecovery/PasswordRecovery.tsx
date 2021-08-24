@@ -1,9 +1,11 @@
-import React, {ChangeEvent, useState} from "react";
+import React, {ChangeEvent, useEffect, useState} from "react";
 import style from "./PasswordRecovery.module.css";
 import {InputContainer} from "../common/InputContainer/InputContainer";
-import {NavLink} from "react-router-dom";
+import {NavLink, Redirect} from "react-router-dom";
 import {MainActionButton} from "../common/MainActionButton/MainActionButton";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {AppRootStateType} from "../state/store";
+import {setSuccessAC} from "./recovery-reducer";
 
 export const PasswordRecovery = () => {
 
@@ -12,11 +14,23 @@ export const PasswordRecovery = () => {
     const disabledBtnSubmit = !email
 
     const dispatch = useDispatch()
+    const success = useSelector<AppRootStateType, boolean>(state => state.recovery.success)
 
     const inputEmail = (event:ChangeEvent<HTMLInputElement>) => {
         setError('')
         setEmail(event.currentTarget.value)
 
+    }
+
+    useEffect(()=> {
+        return ()=>{
+            dispatch(setSuccessAC(false))
+        }
+
+    }, [])
+
+    if(success){
+        return <Redirect to={'/login/'}/> //заглушка пока
     }
 
     return (
