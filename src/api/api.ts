@@ -13,20 +13,16 @@ export const registrationAPI = {
     }
 }
 
-export const  PasswordRecoveryAPI={
-    forgot(email:string) {
-        return instance.post<RecoveryResponseType>('auth/recovery', {
-            email,
-            from: 'test-front-admin <ai73a@yandex.by>',
-            message: `<div style="background-color: lime; padding: 15px">
-                            password recovery link: 
-                            <!--нужен путь к токену Максаб но я не врубаюсь пока что к чему-->
-                        <a href='https://JamesWhite10.github.io/learning-cards#/new-password/$token$'>link</a></div>`
-        })
+export const loginAPI = {
+    login(email: string, password: string, rememberMe: boolean) {
+        return instance.post<loginResponseType>('auth/login', {email, password, rememberMe})
+    },
+    logout() {
+        return instance.delete<logoutResponseType>('auth/me')
     }
 }
 
-//=======TYPES=====
+//TYPES=====
 
 //registrationAPI
 type registrationResponseType = {
@@ -46,10 +42,21 @@ type addedUserType = {
     __v: number
 }
 
-//--------Recovery api types----------
-type RecoveryResponseType ={
-    email:string
-    //не уверен, но возможно хватит типизации только email
-    from:string
-    message:any
+//loginAPI
+type loginResponseType = {
+    _id: string,
+    email: string,
+    name: string,
+    avatar?: string,
+    publicCardPacksCount: number,
+    created: Date,
+    updated: Date,
+    isAdmin: boolean,
+    verified: boolean,
+    rememberMe: boolean,
+    error?: string
+}
+type logoutResponseType = {
+    info: 'logOut success —ฅ/ᐠ.̫ .ᐟ\ฅ—',
+    error: string
 }
