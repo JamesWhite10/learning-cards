@@ -1,31 +1,23 @@
 .label {
     display: flex;
     align-items: center;
-    color: white;
-
     cursor: pointer;
-
-    font-family: "Bell MT";
+    width: fit-content;
 }
 
 .checkbox {
+    appearance: none;
     width: 20px;
     height: 20px;
-    appearance: none;
-    margin-right: 10px;
-    background-color: gold;
+    border: 1px solid cornflowerblue;
+    border-radius: 5px;
     cursor: pointer;
+    margin: 0;
+    margin-right: 10px;
 }
 
 .checkbox:checked {
     appearance: none;
-    background-color: crimson;
-}
-
-.checkbox:focus {
-    outline: 2px solid white;
-}
-
-.spanClassName {
-
+    background: url("https://www.kindpng.com/picc/m/111-1116779_green-check-mark-svg-hd-png-download.png") no-repeat center center;
+    background-size: 80%;
 }
