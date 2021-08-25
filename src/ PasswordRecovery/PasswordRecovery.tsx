@@ -3,6 +3,8 @@ import style from "./PasswordRecovery.module.css";
 import {InputContainer} from "../common/InputContainer/InputContainer";
 import {NavLink, Redirect} from "react-router-dom";
 import {MainActionButton} from "../common/MainActionButton/MainActionButton";
+import {useDispatch} from "react-redux";
+import { HeaderEnterApp } from "../common/HeaderEnterApp/HeaderEnterApp";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../state/store";
 import {recoveryThunk, setSuccessAC} from "./recovery-reducer";
@@ -37,6 +39,7 @@ export const PasswordRecovery = () => {
 
     return (
         <div className={style.passwordRecoveryContainer}>
+            <HeaderEnterApp title={'Forgot your password?'}/>
             <div className={style.inputField}>
                 <InputContainer
                     placeholder={'Email'}
@@ -57,7 +60,7 @@ export const PasswordRecovery = () => {
                     loadingStatus={false}
                 />
                 <p>Did you remember your password?</p>
-                <NavLink to="/login" >Try again</NavLink>
+                <NavLink to="/login" className={style.footerBtn}>Try again</NavLink>
 
             </div>
 

@@ -9,12 +9,21 @@ const instance = axios.create({
 
 export const registrationAPI = {
     register(email: string, password: string) {
-        return instance.post<registrationResponseType>('auth/register', {email, password})
+        return instance.post<RegistrationResponseType>('auth/register', {email, password})
     }
 }
 
-export const  PasswordRecoveryAPI={
-    forgot(email:string) {
+export const loginAPI = {
+    login(email: string, password: string, rememberMe: boolean) {
+        return instance.post<LoginResponseType>('auth/login', {email, password, rememberMe})
+    },
+    logout() {
+        return instance.delete<LogoutResponseType>('auth/me')
+    }
+}
+
+export const passwordRecoveryAPI = {
+    forgot(email: string) {
         return instance.post<RecoveryResponseType>('auth/recovery', {
             email,
             from: 'test-front-admin <ai73a@yandex.by>',
@@ -30,7 +39,7 @@ export const  PasswordRecoveryAPI={
 //=======TYPES=====
 
 //registrationAPI
-type registrationResponseType = {
+type RegistrationResponseType = {
     addedUser: addedUserType
     error?: string
 }
@@ -47,10 +56,28 @@ type addedUserType = {
     __v: number
 }
 
-//--------Recovery api types----------
-type RecoveryResponseType ={
-    email:string
-    //не уверен, но возможно хватит типизации только email
-    from:string
-    message:any
+//loginAPI
+type LoginResponseType = {
+    _id: string,
+    email: string,
+    name: string,
+    avatar?: string,
+    publicCardPacksCount: number,
+    created: Date,
+    updated: Date,
+    isAdmin: boolean,
+    verified: boolean,
+    rememberMe: boolean,
+    error?: string
+}
+type LogoutResponseType = {
+    info: 'logOut success —ฅ/ᐠ.̫ .ᐟฅ—',
+    error: string
+}
+
+//recovery password API
+type RecoveryResponseType = {
+    email: string
+    from: string
+    message: any
 }
