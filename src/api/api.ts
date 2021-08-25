@@ -1,4 +1,5 @@
 import axios from 'axios'
+import {EmailDataType} from "../ PasswordRecovery/PasswordRecovery";
 
 const instance = axios.create({
     withCredentials: true,
@@ -23,17 +24,14 @@ export const loginAPI = {
 }
 
 export const passwordRecoveryAPI = {
-    forgot(email: string) {
-        return instance.post<RecoveryResponseType>('auth/recovery', {
-            email,
-            from: 'test-front-admin <ai73a@yandex.by>',
-            message: `<div style="background-color: lime; padding: 15px">
-                            password recovery link: 
-                            <!--нужен путь к токену Максаб но я не врубаюсь пока что к чему-->
-                        <a href='https://localhost:3000/#/new-password/$token$'>link</a></div>`
-        })
+    forgot(data:EmailDataType) {
+        return instance.post<RecoveryResponseType>('auth/forgot', data)
+    },
+    recovery(data:RecoveryRequestType) {
+        return instance.post<RecoveryResponseType>('auth/set-new-password', data)
     }
 }
+                        //нужен путь к токену Максаб но я не врубаюсь пока что к чему
                        /* <a href='https://JamesWhite10.github.io/learning-cards#/new-password/$token$'>link</a></div>`*/
 
 //=======TYPES=====
@@ -80,4 +78,9 @@ type RecoveryResponseType = {
     email: string
     from: string
     message: any
+}
+
+export type RecoveryRequestType = {
+    password: string
+    resetPasswordToken: string
 }

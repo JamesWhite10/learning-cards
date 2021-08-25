@@ -5,7 +5,7 @@ type InputContainerPropsType = {
     title?: string
     value: string
     changeValue: (e: ChangeEvent<HTMLInputElement>) => void,
-    errorMessage: string
+    errorMessage?: string
     typeInput: 'email' | 'password' | 'text'
     placeholder?: string
     onBlur?: (e: FocusEvent<HTMLInputElement>) => void

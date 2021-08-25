@@ -1,5 +1,6 @@
 import {AppThunkType} from "../state/store";
-import {PasswordRecoveryAPI} from "../api/api";
+import {passwordRecoveryAPI, RecoveryRequestType} from "../api/api";
+import {EmailDataType} from "./PasswordRecovery";
 
 const initialRecoveryReducerState = {
     error: "",
@@ -31,10 +32,10 @@ export const setSuccessAC = (success: boolean) => ({
 
 
 //=======ThunkC=======
-export const recoveryThunk = (email: string): AppThunkType =>
+export const recoveryThunk = (data:EmailDataType): AppThunkType =>
     async (dispatch) => {
         try {
-            await PasswordRecoveryAPI.forgot(email)
+            await passwordRecoveryAPI.forgot(data)
             dispatch(setSuccessAC(true))
         } catch (e) {
             const error = e.response
@@ -47,7 +48,16 @@ export const recoveryThunk = (email: string): AppThunkType =>
 
     }
 
-
+export const newPassThunk = (data:RecoveryRequestType): AppThunkType =>
+    async dispatch => {
+    try {
+        await passwordRecoveryAPI.recovery(data)
+    } catch(e) {
+        const error = e.response
+            ? e.response.data.error
+            : (e.message + `, more information in console`);
+    }
+    }
 //=======Types========
 export type InitialRecoveryReducerType = typeof initialRecoveryReducerState
 export type ActionRecoveryReducerTypes = ReturnType<typeof setSuccessAC>

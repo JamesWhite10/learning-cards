@@ -1,0 +1,77 @@
+.textInput {
+    height: 73px;
+}
+
+.input {
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    height: 28px;
+    min-width: 100px;
+    padding: 5px 0 5px 15px;
+    border-radius: 5px;
+    transition: .3s;
+    font-size: 14px;
+    outline: none;
+}
+
+.error {
+    margin: 5px 10px;
+    color: #d41c50;
+    display: block;
+}
+
+.errorInput {
+    box-shadow: 0 0 0 1px #d41c50;
+}
+
+.input.errorInput:focus {
+    box-shadow: 0 0 0 2px #d41c50;
+}
+
+.input.standard.errorInput:focus, .input.light.errorInput:focus,
+.input.dark.errorInput:focus, .input.purple.errorInput:focus {
+    box-shadow: 0 0 0 2px #d41c50;
+}
+
+/*light variant*/
+.input.light {
+    color: #000000;
+    background: #ffffff;
+    border: 1px solid #7f7f7f;
+}
+.input.light:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #636363;
+}
+
+/*standard variant*/
+.input.standard {
+    color: #fff;
+    background: #6596ee;
+    border: 1px solid #000000;
+}
+.input.standard:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #cbd6ee;
+}
+
+/*dark variant*/
+.input.dark {
+    color: #ffffff;
+    background-color: #0c0c0c;
+    border: 1px solid #000000;
+}
+.input.dark:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #cbd6ee;
+}
+
+/*purple variant*/
+.input.purple {
+    color: #fff;
+    background: #9155d9;
+    border: 1px solid #000000;
+}
+.input.purple:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #5544d5;
+}

@@ -3,9 +3,8 @@ import style from "./PasswordRecovery.module.css";
 import {InputContainer} from "../common/InputContainer/InputContainer";
 import {NavLink, Redirect} from "react-router-dom";
 import {MainActionButton} from "../common/MainActionButton/MainActionButton";
-import {useDispatch} from "react-redux";
-import { HeaderEnterApp } from "../common/HeaderEnterApp/HeaderEnterApp";
 import {useDispatch, useSelector} from "react-redux";
+import { HeaderEnterApp } from "../common/HeaderEnterApp/HeaderEnterApp";
 import {AppRootStateType} from "../state/store";
 import {recoveryThunk, setSuccessAC} from "./recovery-reducer";
 
@@ -23,8 +22,15 @@ export const PasswordRecovery = () => {
         setEmail(event.currentTarget.value)
 
     }
+    const emailData = {
+        email,
+        from: 'test-front-admin <ai73a@yandex.by>',
+        message: `<div style="background-color: lime; padding: 15px">
+            password recovery link:	<a href='http://localhost:3000/#/new-password/$token$'>link</a>
+            </div>`
+    }
     const sendInstruction = () => {
-        dispatch(recoveryThunk(email))
+        dispatch(recoveryThunk(emailData))
     }
     useEffect(()=> {
         return ()=>{
@@ -66,4 +72,10 @@ export const PasswordRecovery = () => {
 
         </div>
     )
+}
+
+export type EmailDataType = {
+    email:string
+    from: string
+    message: string
 }
