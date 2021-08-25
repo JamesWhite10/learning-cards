@@ -31,8 +31,7 @@ export const passwordRecoveryAPI = {
         return instance.post<RecoveryResponseType>('auth/set-new-password', data)
     }
 }
-                        //нужен путь к токену Максаб но я не врубаюсь пока что к чему
-                       /* <a href='https://JamesWhite10.github.io/learning-cards#/new-password/$token$'>link</a></div>`*/
+
 
 //=======TYPES=====
 
