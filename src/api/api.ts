@@ -21,10 +21,11 @@ export const  PasswordRecoveryAPI={
             message: `<div style="background-color: lime; padding: 15px">
                             password recovery link: 
                             <!--нужен путь к токену Максаб но я не врубаюсь пока что к чему-->
-                        <a href='https://JamesWhite10.github.io/learning-cards#/new-password/$token$'>link</a></div>`
+                        <a href='https://localhost:3000/#/new-password/$token$'>link</a></div>`
         })
     }
 }
+                       /* <a href='https://JamesWhite10.github.io/learning-cards#/new-password/$token$'>link</a></div>`*/
 
 //=======TYPES=====
 

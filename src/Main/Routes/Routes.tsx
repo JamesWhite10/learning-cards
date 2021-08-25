@@ -5,6 +5,7 @@ import {Profile} from "../../Profile/Profile";
 import {Login} from "../../Login/Login";
 import {Registration} from "../../Registration/Registration";
 import {PasswordRecovery} from "../../ PasswordRecovery/PasswordRecovery";
+import { NewPassword } from '../../ PasswordRecovery/NewPassword';
 
 
 
@@ -13,7 +14,8 @@ export const PATH = {
     LOGIN: '/login',
     REGISTRATION: '/registration',
     TEST: '/test',
-    RECOVERY: '/password-recovery'
+    RECOVERY: '/password-recovery',
+    NEWPASS: '/new-password/:token',
 }
 
 function Routes() {
@@ -28,6 +30,7 @@ function Routes() {
                 <Route path={PATH.LOGIN} render={() => <Login/>}/>
                 <Route path={PATH.REGISTRATION} render={() => <Registration/>}/>
                 <Route path={PATH.RECOVERY} render={() => <PasswordRecovery/>}/>
+                <Route path={PATH.NEWPASS} render={() => <NewPassword/>}/>
 
                 {/*у этого роута нет пути, он отрисуется если пользователь захочет попасть на несуществующую страницу*/}
                 <Route render={() => <Error404/>}/>

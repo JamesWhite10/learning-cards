@@ -5,7 +5,7 @@ import {NavLink, Redirect} from "react-router-dom";
 import {MainActionButton} from "../common/MainActionButton/MainActionButton";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../state/store";
-import {setSuccessAC} from "./recovery-reducer";
+import {recoveryThunk, setSuccessAC} from "./recovery-reducer";
 
 export const PasswordRecovery = () => {
 
@@ -21,7 +21,9 @@ export const PasswordRecovery = () => {
         setEmail(event.currentTarget.value)
 
     }
-
+    const sendInstruction = () => {
+        dispatch(recoveryThunk(email))
+    }
     useEffect(()=> {
         return ()=>{
             dispatch(setSuccessAC(false))
@@ -49,7 +51,7 @@ export const PasswordRecovery = () => {
             <div className={style.positionButtonAndError}>
 
                 <MainActionButton
-                    actionClick={()=>{}}
+                    actionClick={sendInstruction}
                     disabledBtnSubmit={disabledBtnSubmit}
                     title={"Get Instructions"}
                     loadingStatus={false}
