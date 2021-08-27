@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/learning-cards/static/css/main.fa19c6c9.chunk.css",
-    "main.js": "/learning-cards/static/js/main.282b5900.chunk.js",
-    "main.js.map": "/learning-cards/static/js/main.282b5900.chunk.js.map",
-    "runtime-main.js": "/learning-cards/static/js/runtime-main.77ce81ff.js",
-    "runtime-main.js.map": "/learning-cards/static/js/runtime-main.77ce81ff.js.map",
-    "static/js/2.641b969d.chunk.js": "/learning-cards/static/js/2.641b969d.chunk.js",
-    "static/js/2.641b969d.chunk.js.map": "/learning-cards/static/js/2.641b969d.chunk.js.map",
-    "static/js/3.76ffed99.chunk.js": "/learning-cards/static/js/3.76ffed99.chunk.js",
-    "static/js/3.76ffed99.chunk.js.map": "/learning-cards/static/js/3.76ffed99.chunk.js.map",
+    "main.css": "/learning-cards/static/css/main.edd5fcbf.chunk.css",
+    "main.js": "/learning-cards/static/js/main.395ef9df.chunk.js",
+    "main.js.map": "/learning-cards/static/js/main.395ef9df.chunk.js.map",
+    "runtime-main.js": "/learning-cards/static/js/runtime-main.95f12202.js",
+    "runtime-main.js.map": "/learning-cards/static/js/runtime-main.95f12202.js.map",
+    "static/js/2.a0a452d1.chunk.js": "/learning-cards/static/js/2.a0a452d1.chunk.js",
+    "static/js/2.a0a452d1.chunk.js.map": "/learning-cards/static/js/2.a0a452d1.chunk.js.map",
+    "static/js/3.a41a95be.chunk.js": "/learning-cards/static/js/3.a41a95be.chunk.js",
+    "static/js/3.a41a95be.chunk.js.map": "/learning-cards/static/js/3.a41a95be.chunk.js.map",
     "index.html": "/learning-cards/index.html",
-    "static/css/main.fa19c6c9.chunk.css.map": "/learning-cards/static/css/main.fa19c6c9.chunk.css.map",
-    "static/js/2.641b969d.chunk.js.LICENSE.txt": "/learning-cards/static/js/2.641b969d.chunk.js.LICENSE.txt"
+    "static/css/main.edd5fcbf.chunk.css.map": "/learning-cards/static/css/main.edd5fcbf.chunk.css.map",
+    "static/js/2.a0a452d1.chunk.js.LICENSE.txt": "/learning-cards/static/js/2.a0a452d1.chunk.js.LICENSE.txt",
+    "static/media/loadingBtn.8c4b4840.svg": "/learning-cards/static/media/loadingBtn.8c4b4840.svg",
+    "static/media/menu.e6378079.png": "/learning-cards/static/media/menu.e6378079.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.77ce81ff.js",
-    "static/js/2.641b969d.chunk.js",
-    "static/css/main.fa19c6c9.chunk.css",
-    "static/js/main.282b5900.chunk.js"
+    "static/js/runtime-main.95f12202.js",
+    "static/js/2.a0a452d1.chunk.js",
+    "static/css/main.edd5fcbf.chunk.css",
+    "static/js/main.395ef9df.chunk.js"
   ]
 }
