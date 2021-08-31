@@ -17,9 +17,6 @@ export const registrationAPI = {
 export const loginAPI = {
     login(email: string, password: string, rememberMe: boolean) {
         return instance.post<LoginResponseType>('auth/login', {email, password, rememberMe})
-    },
-    logout() {
-        return instance.delete<LogoutResponseType>('auth/me')
     }
 }
 
@@ -29,6 +26,18 @@ export const passwordRecoveryAPI = {
     },
     recovery(data:RecoveryRequestType) {
         return instance.post<RecoveryResponseType>('auth/set-new-password', data)
+    }
+}
+
+export const authAPI = {
+    me() {
+        return instance.post<LoginResponseType>('auth/me', {})
+    },
+    updateProfile(avatar: string, name: string) {
+        return instance.put<ProfileResponseType>('auth/me', {avatar, name})
+    },
+    logout() {
+        return instance.delete<LogoutResponseType>('auth/me')
     }
 }
 
@@ -70,6 +79,14 @@ type LoginResponseType = {
 type LogoutResponseType = {
     info: 'logOut success —ฅ/ᐠ.̫ .ᐟฅ—',
     error: string
+}
+
+//profileAPI
+export type ProfileResponseType = {
+    updatedUser: LoginResponseType
+    error?: string
+    token: string
+    tokenDeathTime: number
 }
 
 //recovery password API
