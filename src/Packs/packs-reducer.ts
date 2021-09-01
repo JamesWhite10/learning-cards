@@ -11,7 +11,7 @@ const initialState = {
 }
 type InitialStateType = typeof initialState
 
-export const loginReducer = (state: InitialStateType = initialState, action: actionsLoginType): InitialStateType => {
+export const packsReducer = (state: InitialStateType = initialState, action: actionsLoginType): InitialStateType => {
     switch (action.type) {
         case 'LOGIN/SET-LOGIN':
             return {...state, login: action.value}

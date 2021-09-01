@@ -3,6 +3,7 @@ import {logout} from '../Login/login-reducer';
 import {useDispatch, useSelector} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import {AppRootStateType} from "../state/store";
+import s from './Profile.module.css'
 
 export const Profile = () => {
     const dispatch = useDispatch()
@@ -19,7 +20,7 @@ export const Profile = () => {
     return (
         <div>
             <h1>TEST</h1>
-            {isAuth && <button onClick={logoutHandler}>Logout</button>}
+            {isAuth && <button className={s.btnLogout} onClick={logoutHandler}>Logout</button>}
         </div>
     )
 }
