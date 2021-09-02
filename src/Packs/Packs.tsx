@@ -1,8 +1,17 @@
 import React from 'react';
 import SuperCheckbox from '../HomemadeInpButCheck/common/c3-SuperCheckbox/SuperCheckbox';
 import s from './Packs.module.css'
+import {useSelector} from "react-redux";
+import {AppRootStateType} from "../state/store";
+import {Redirect} from "react-router-dom";
 
-export const Packs = () => {
+export const Packs = (props: { user_id?: string }) => {
+
+    const isAuth = useSelector<AppRootStateType, boolean>(state => state.login.logIn)
+
+    if (!isAuth) {
+        return <Redirect to={'/login'}/>
+    }
 
     return (
         <div className={s.container}>
