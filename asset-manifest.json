@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/learning-cards/static/css/main.4531b57e.chunk.css",
+    "main.css": "/learning-cards/static/css/main.eb4cdab5.chunk.css",
     "main.js": "/learning-cards/static/js/main.c99078dd.chunk.js",
     "main.js.map": "/learning-cards/static/js/main.c99078dd.chunk.js.map",
     "runtime-main.js": "/learning-cards/static/js/runtime-main.9da5bd8e.js",
@@ -10,7 +10,7 @@
     "static/js/3.8834c971.chunk.js": "/learning-cards/static/js/3.8834c971.chunk.js",
     "static/js/3.8834c971.chunk.js.map": "/learning-cards/static/js/3.8834c971.chunk.js.map",
     "index.html": "/learning-cards/index.html",
-    "static/css/main.4531b57e.chunk.css.map": "/learning-cards/static/css/main.4531b57e.chunk.css.map",
+    "static/css/main.eb4cdab5.chunk.css.map": "/learning-cards/static/css/main.eb4cdab5.chunk.css.map",
     "static/js/2.8ac0bfbb.chunk.js.LICENSE.txt": "/learning-cards/static/js/2.8ac0bfbb.chunk.js.LICENSE.txt",
     "static/media/checkEmail.27258fd7.svg": "/learning-cards/static/media/checkEmail.27258fd7.svg",
     "static/media/loadingBtn.95ae2c78.svg": "/learning-cards/static/media/loadingBtn.95ae2c78.svg"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.9da5bd8e.js",
     "static/js/2.8ac0bfbb.chunk.js",
-    "static/css/main.4531b57e.chunk.css",
+    "static/css/main.eb4cdab5.chunk.css",
     "static/js/main.c99078dd.chunk.js"
   ]
 }
