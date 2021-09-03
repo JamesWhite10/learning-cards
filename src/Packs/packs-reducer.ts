@@ -2,7 +2,7 @@ import {
     loadingRequest,
     setServerErrorMessageRegistration
 } from '../Registration/registration-reducer';
-import {authAPI, loginAPI, PackType} from '../api/api';
+import {authAPI, loginAPI, packsAPI, PacksResponseType, PackType} from '../api/api';
 import {AppThunkType} from '../state/store';
 
 
@@ -10,18 +10,14 @@ const initialState: Array<PackType> = []
 
 export const packsReducer = (state = initialState, action: ActionsPacksType): Array<PackType> => {
     switch (action.type) {
-        // case 'PACKS/REMOVE-PACK':
-        //     return {...state.filter(t => t._id != action.packId)}
-        // case 'PACKS/ADD-PACK':
-        //     return {...state, action.pack}
-        // case 'PACKS/UPDATE-PACK':
-        //     return {
-        //         ...state,
-        //         [action.todolistId]: state[action.packId]
-        //             .map(t => t.id === action.packId ? {...t, ...action.model} : t)
-        //     }
-        // case 'PACKS/SET-PACK':
-        //     return {...state, action.packs}
+        case 'PACKS/REMOVE-PACK':
+            return {...state.filter(t => t._id != action.packId)}
+        case 'PACKS/ADD-PACK':
+            return [{...action.pack}, ...state]
+        case 'PACKS/UPDATE-PACK':
+            return action.packs
+        case 'PACKS/SET-PACK':
+            return action.packs
         default:
             return state
     }
@@ -34,13 +30,19 @@ export const removePack = (packId: string) =>
 export const addPack = (pack: PackType) =>
     ({type: 'PACKS/ADD-PACK', pack} as const)
 
-export const updatePack = (packId: string) =>
-    ({type: 'PACKS/UPDATE-PACK', packId} as const)
+export const updatePack = (packs: Array<PackType>) =>
+    ({type: 'PACKS/UPDATE-PACK', packs} as const)
 
-export const setPacks = (packs: Array<PackType>, packId: string) =>
-    ({type: 'PACKS/SET-PACK', packs, packId} as const)
+export const setPacks = (packs: Array<PackType>) =>
+    ({type: 'PACKS/SET-PACK', packs} as const)
 
 // thunks
+// export const fetchPacks = (todolistId: string): AppThunkType => async (dispatch) => {
+//     dispatch(loadingRequest(true))
+//     await packsAPI.getPacks()
+//     dispatch(setPacks())
+//     dispatch(loadingRequest(false))
+// }
 // export const setLogin = (email: string, password: string, rememberMe: boolean): AppThunkType => async (dispatch) => {
 //     dispatch(loadingRequest(true))
 //     try {
