@@ -128,6 +128,7 @@ type registrationResponseType = {
     addedUser: addedUserType
     error?: string
 }
+
 type addedUserType = {
     _id: string,
     email: string,
