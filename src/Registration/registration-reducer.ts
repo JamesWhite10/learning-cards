@@ -8,7 +8,7 @@ const initialStateRegistration = {
     error: ''
 }
 
-export const registrationReducer = (state: initialRegistrationType = initialStateRegistration, action: ActionsRegistrationType): initialRegistrationType => {
+export const registrationReducer = (state: InitialRegistrationType = initialStateRegistration, action: ActionsRegistrationType): InitialRegistrationType => {
     switch (action.type) {
         case 'REGISTRATION/SET-REGISTRATION':
             return {...state, ...action.payload}
@@ -53,7 +53,7 @@ export const setRegistration = (email: string, password: string): AppThunkType =
 }
 
 //types
-export type initialRegistrationType = typeof initialStateRegistration
+export type InitialRegistrationType = typeof initialStateRegistration
 export type ActionsRegistrationType = ReturnType<typeof setRegistrationAC>
     | ReturnType<typeof loadingRequest>
     | ReturnType<typeof setServerErrorMessageRegistration>
