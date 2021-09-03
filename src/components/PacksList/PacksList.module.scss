@@ -1,0 +1,100 @@
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  .private {
+    align-self: flex-start;
+  }
+  .search {
+    align-self: flex-start;
+  }
+  .table {
+    border: 1px solid black;
+  }
+  .tableHeader {
+    border: 1px solid black;
+  }
+  .tableRow {
+    border: 1px solid black;
+  }
+  .tableCol {
+    border: 1px solid black;
+  }
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  .containerInputSearch {
+    display: flex;
+    flex-direction: row;
+  }
+}
+.modalContainer {
+  z-index: 15;
+}
+.backgroundModal {
+  visibility: visible;
+  background-color: #81839e;
+  opacity: 0.8;
+  z-index: 20;
+  height: 100vh;
+  width: 100%;
+}
+.modalWindowAdd {
+  visibility: visible;
+  background: linear-gradient(180deg, #E6D4DE, #9890C7) no-repeat;
+  z-index: 21;
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .closeModalAdd {
+    align-self: flex-end;
+  }
+  .addModalAdd {
+    margin-top: 20px;
+    background-color: #e33e37;
+    position: relative;
+    z-index: 30;
+  }
+}
+.visibilityWindow {
+  visibility: visible;
+}
+
+.btnLearn{
+  color: #465511;
+  border-radius: 2px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  border: 1px solid #635D80;
+  padding: 5px 6px 4px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.card {
+  margin-right: 20px;
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+  &:hover {
+    color: black;
+  }
+}
+
+.learn {
+  margin-right: 20px;
+  text-decoration: none;
+  color: white;
+  &:hover {
+    color: black;
+  }
+}

@@ -1,0 +1,54 @@
+.emailPasswordContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  input {
+    padding: 3px;
+    margin-bottom: 3px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: SF UI Display, sans-serif;
+    color: #2D2E46;
+    width: 100%;
+    border-bottom: 1.3px rgba(36, 37, 74, 0.5) solid;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    background-color: #F9F9FE;
+    outline: none;
+  }
+
+}
+
+.inputTitle {
+  font-size: 13px;
+  line-height: 20px;
+  color: #24254A;
+  Opacity: 0.5;
+  font-family: SF UI Display, sans-serif;
+}
+
+.errorEmailPasswordMessage {
+  height: 15px;
+  color: red;
+  font-size: 13px;
+  font-family: SF UI Display, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.passwordControl {
+  position: absolute;
+  top: 20px;
+  right: 6px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,21 @@
+.pagination {
+  display: block;
+  font-size: 1.3rem;
+  .pagePanel {
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    color: rgba(82, 82, 82, 1);
+    > span {
+      padding: 0 0.8rem;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .pageNumber {
+      line-height: 2.4rem;
+    }
+    .selectedPage {
+      font-weight: 600;
+    }
+  }
+}

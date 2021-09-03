@@ -1,0 +1,72 @@
+.authPageContainer {
+  padding: 25px;
+  box-sizing: border-box;
+  height: 600px;
+  max-width: 415px;
+  border-radius: 8px;
+  width: 100%;
+  background-color: #F9F9FE;
+  margin-top: 20px;
+}
+
+.emailPasswordLoginContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+
+.forgotPasswordBtn {
+  margin-top: 45px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 14px;
+  line-height: 17px;
+  font-family: SF UI Display, sans-serif;
+  transition: .2s;
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.btnFooterLoginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-family: SF UI Display, sans-serif;
+}
+
+
+.errorMessageContainer {
+  height: 30px;
+  color: red;
+}
+
+.DifferentAccountBtn {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(45, 46, 70, 0.5);
+}
+
+.footerBtn {
+  line-height: 24px;
+  color: #21268F;
+  transition: .2s;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.blueBtnContainer {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  max-width: 266px;
+  width: 100%;
+}
