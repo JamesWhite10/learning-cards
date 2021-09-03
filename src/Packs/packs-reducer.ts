@@ -28,8 +28,8 @@ export const setIsLoggedIn = (value: boolean) =>
 export const setLogin = (email: string, password: string, rememberMe: boolean): AppThunkType => async (dispatch) => {
     dispatch(loadingRequest(true))
     try {
-        await loginAPI.login(email, password, rememberMe)
-        dispatch(setIsLoggedIn(true))
+        await loginAPI.logIn(email, password, rememberMe)
+        //ispatch(setIsLoggedIn(true))
     } catch (e) {
         const error = e.response
             ? e.response.data.error
@@ -44,7 +44,7 @@ export const logout = (): AppThunkType => async (dispatch) => {
     dispatch(loadingRequest(true))
     try {
         await authAPI.logout()
-        dispatch(setIsLoggedIn(false))
+        //dispatch(setIsLoggedIn(false))
         dispatch(loadingRequest(false))
     } catch (e) {
         const error = e.response

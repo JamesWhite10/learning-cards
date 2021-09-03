@@ -1,0 +1,45 @@
+.profilePageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px;
+    box-sizing: border-box;
+    height: 540px;
+    max-width: 415px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #F9F9FE;
+    margin: 10px auto 0;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btnCancel {
+    height: 36px;
+    font-size: 16px;
+    max-width: 125px;
+    width: 100%;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #21268F;
+    font-family: SF UI Display, sans-serif;
+    opacity: 0.8;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+    background-color: #D7D8EF;
+    transition: .2s;
+    cursor: pointer;
+}
+.btnCancel:hover {
+     background-color: #c0c1dc;
+ }
+
+.blueBtnContainer {
+    max-width: 187px;
+    width: 100%;
+}

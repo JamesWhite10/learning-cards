@@ -25,13 +25,13 @@
 .header {
     display: flex;
 
-    width: 800px;
+    width: 1000px;
 
-    transition-duration: 2s;
-    transform: translate(-700px);
+    transition-duration: 3s;
+    transform: translate(-750px);
 }
 
 .header:hover {
-    transition-duration: 1.5s;
+    transition-duration: 1s;
     transform: translate(0);
 }

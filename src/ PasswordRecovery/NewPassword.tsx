@@ -4,6 +4,7 @@ import {useDispatch} from "react-redux";
 import {MyTextInput} from "../NikComponents/MyTextInput";
 import {useParams} from "react-router";
 import {Redirect} from "react-router-dom";
+import s from "./NewPassword.module.css"
 
 
 export const NewPassword = () => {
@@ -22,6 +23,6 @@ export const NewPassword = () => {
     }
     return <>
         <MyTextInput value={password} onChangeText={setPassword} placeholder={'Password'}/>
-        <button onClick={changePass}> change password</button>
+        <button className={s.btn} onClick={changePass}> change password</button>
     </>
 }

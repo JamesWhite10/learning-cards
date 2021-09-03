@@ -25,6 +25,7 @@ export const Registration = () => {
     const loadingStatus = useSelector<AppRootStateType, boolean>(state => state.registration.loadingRequest)
     const isRegistration = useSelector<AppRootStateType, boolean>(state => state.registration.isRegistration)
     const serverErrorMessage = useSelector<AppRootStateType, string>(state => state.registration.error)
+    const login = useSelector<AppRootStateType, boolean>(state => state.login.logIn)
 
     const onChangeEmail = (e: ChangeEvent<HTMLInputElement>) => {
         setErrorEmailMessage('')
@@ -65,6 +66,10 @@ export const Registration = () => {
 
     if (isRegistration) {
         return <Redirect to={'/login'}/>
+    }
+
+    if (login) {
+        return <Redirect to={'/profile'}/>
     }
 
     const goBack = () => {

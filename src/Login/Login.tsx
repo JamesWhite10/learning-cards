@@ -7,9 +7,8 @@ import {NavLink, Redirect} from 'react-router-dom';
 import SuperCheckbox from '../HomemadeInpButCheck/common/c3-SuperCheckbox/SuperCheckbox';
 import {emailValidation} from '../common/validation/EmailValidation';
 import {PasswordValidation} from '../common/validation/passwordValidation';
-import {setLogin} from './login-reducer';
+import {loginUserTC, setServerErrorMessageLogin} from './login-reducer';
 import {AppRootStateType} from "../state/store";
-import {setServerErrorMessageRegistration} from "../Registration/registration-reducer";
 import {HeaderEnterApp} from "../common/HeaderEnterApp/HeaderEnterApp";
 import style from "../ PasswordRecovery/PasswordRecovery.module.css";
 
@@ -21,8 +20,8 @@ export const Login = () => {
     const disabledBtnSubmit = !email || !password
 
     const dispatch = useDispatch()
-    const login = useSelector<AppRootStateType, boolean>(state => state.login.login)
-    const loadingStatus = useSelector<AppRootStateType, boolean>(state => state.registration.loadingRequest)
+    const login = useSelector<AppRootStateType, boolean>(state => state.login.logIn)
+    const loadingStatus = useSelector<AppRootStateType, boolean>(state => state.login.loadingRequest)
     const serverErrorMessage = useSelector<AppRootStateType, string>(state => state.registration.error)
 
     const [errorEmailMessage, setErrorEmailMessage] = useState<string>('')
@@ -31,11 +30,11 @@ export const Login = () => {
     const onChangeEmail = (e: ChangeEvent<HTMLInputElement>) => {
         setEmail(e.currentTarget.value)
         setErrorEmailMessage('')
-        serverErrorMessage && dispatch(setServerErrorMessageRegistration(''))
+        serverErrorMessage && dispatch(setServerErrorMessageLogin(''))
     }
     const onChangePassword = (e: ChangeEvent<HTMLInputElement>) => {
         setPassword(e.currentTarget.value)
-        serverErrorMessage && dispatch(setServerErrorMessageRegistration(''))
+        serverErrorMessage && dispatch(setServerErrorMessageLogin(''))
         setErrorPasswordMessage('')
     }
 
@@ -49,7 +48,7 @@ export const Login = () => {
         } else if (!PasswordValidation(password)) {
             setErrorPasswordMessage('Minimum 8 characters')
         } else {
-            dispatch(setLogin(email, password, rememberMe))
+            dispatch(loginUserTC(email, password, rememberMe))
         }
     }
 

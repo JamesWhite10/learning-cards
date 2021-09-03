@@ -16,6 +16,7 @@ export const PasswordRecovery = () => {
 
     const dispatch = useDispatch()
     const success = useSelector<AppRootStateType, boolean>(state => state.recovery.success)
+    const login = useSelector<AppRootStateType, boolean>(state => state.login.logIn)
 
     const inputEmail = (event:ChangeEvent<HTMLInputElement>) => {
         setError('')
@@ -41,6 +42,10 @@ export const PasswordRecovery = () => {
 
     if(success){
         return <Redirect to={'/login/'}/> //заглушка пока
+    }
+
+    if (login) {
+        return <Redirect to={'/profile'}/>
     }
 
     return (

@@ -1,21 +1,78 @@
-.btnLogout {
-    height: 36px;
-    font-size: 16px;
-    max-width: 125px;
-    width: 100%;
-    border-radius: 30px;
+.profilePageContainer {
+    min-height: 720px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #21268F;
-    font-family: SF UI Display, sans-serif;
-    opacity: 0.8;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
-    background-color: #D7D8EF;
-    transition: .2s;
-    cursor: pointer;
+    justify-content: space-between;
+    border-radius: 8px;
+    background-color: #FEFEFF;
 }
 
-.btnLogout:hover {
-    background-color: #c0c1dc;
+.profileContainer {
+    max-width: 243px;
+    width: 100%;
+    min-height: 636px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    background-color: #ECECF9;
+}
+
+.profileAboutYou {
+    width: 100%;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #D9D9F1;
+    border-radius: 8px 0 8px 8px;
+    padding: 10px 10px 16px;
+}
+
+.profileAboutYou.img {
+    height: 96px;
+    width: 96px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.btnEdit {
+    color: #465511;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 5px 6px 4px;
+    background: transparent;
+    border: 1px solid #635D80;
+    box-sizing: border-box;
+    border-radius: 2px;
+    margin-right: 10px;
+    cursor: pointer;
+
+}
+
+.profilePacksList {
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.btnLogout {
+    background: #e33e37;
+    border-radius: 2px;
+    border: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+    padding: 5px 6px 4px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.packsListContainer {
+    margin: 24px 48px 0 48px;
 }
