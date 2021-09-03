@@ -1,11 +1,11 @@
-import s from "./InputContainer.module.css";
+import s from "./InputContainer.module.scss";
 import React, {ChangeEvent, FocusEvent, useState} from "react";
 
 type InputContainerPropsType = {
     title?: string
     value: string
     changeValue: (e: ChangeEvent<HTMLInputElement>) => void,
-    errorMessage?: string
+    errorMessage: string
     typeInput: 'email' | 'password' | 'text'
     placeholder?: string
     onBlur?: (e: FocusEvent<HTMLInputElement>) => void

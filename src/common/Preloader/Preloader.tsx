@@ -1,6 +1,6 @@
 import React from "react";
 import loadingProgress from '../../media/loadings/loadingBtn.svg'
-import st from './Preloader.module.css'
+import st from './Preloader.module.scss'
 
 export const Preloader = () => {
     return (

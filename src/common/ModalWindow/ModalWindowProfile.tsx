@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./modalWindowProfile.module.css";
+import s from "./modalWindowProfile.module.scss";
 
 type ModalWindowProfilePropsType = {
     onClick: () => void

@@ -1,4 +1,4 @@
-import s from "./MainActionButton.module.css";
+import s from "./MainActionButton.module.scss";
 import {Preloader} from "../Preloader/Preloader";
 import React from "react";
 

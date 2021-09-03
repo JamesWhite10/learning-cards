@@ -1,0 +1,29 @@
+.nav {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+}
+
+.item {
+  a {
+    color: #fff;
+    text-decoration: none;
+    transition: .3s;
+    &.activeLink {
+      color: gold;
+    }
+
+    &:hover {
+      color: #787878;
+    }
+  }
+}
+
+.tab_friend {
+  margin-top: 30px;
+}
+
+.title_friend {
+  font-size: 18px;
+}
