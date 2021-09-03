@@ -11,7 +11,7 @@ const initialState = {
 }
 type InitialStateType = typeof initialState
 
-export const loginReducer = (state: InitialStateType = initialState, action: actionsLoginType): InitialStateType => {
+export const loginReducer = (state: InitialStateType = initialState, action: ActionsLoginType): InitialStateType => {
     switch (action.type) {
         case 'LOGIN/SET-LOGIN':
             return {...state, login: action.value}
@@ -55,6 +55,6 @@ export const logout = (): AppThunkType => async (dispatch) => {
 }
 
 // types
-export type actionsLoginType = ReturnType<typeof setIsLoggedIn>
+export type ActionsLoginType = ReturnType<typeof setIsLoggedIn>
     | ReturnType<typeof loadingRequest>
     | ReturnType<typeof setServerErrorMessageRegistration>

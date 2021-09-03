@@ -41,6 +41,21 @@ export const authAPI = {
     }
 }
 
+export const packsAPI = {
+    getPacks() {
+        return instance.get<PacksResponseType>(`cards/pack`);
+    },
+    deletePack() {
+        return instance.delete<PacksResponseType>(`cards/pack`);
+    },
+    createPack() {
+        return instance.post<PacksResponseType>(`cards/pack`);
+    },
+    updatePack() {
+        return instance.put<PacksResponseType>(`cards/pack`);
+    }
+}
+
 
 //=======TYPES=====
 
@@ -99,4 +114,28 @@ type RecoveryResponseType = {
 export type RecoveryRequestType = {
     password: string
     resetPasswordToken: string
+}
+
+//packs API
+export type PacksResponseType = {
+    cardPacks: Array<PackType>
+    cardPacksTotalCount: number
+    maxCardsCount: number
+    minCardsCount: number
+    page: 1
+    pageCount: number
+}
+
+export type PackType = {
+    _id: string
+    user_id: string
+    name: string
+    path: string
+    cardsCount: number
+    grade: number
+    shots: number
+    rating: number
+    created: string
+    updated: string
+    __v: number
 }
